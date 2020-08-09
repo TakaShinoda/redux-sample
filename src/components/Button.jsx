@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-class Button extends React.Component {
+export class Button extends React.Component {
   constructor(props) {
     super(props)
     this.doAction = this.doAction.bind(this)
@@ -21,5 +21,3 @@ class Button extends React.Component {
 }
 
 Button = connect()(Button)
-
-export default Button

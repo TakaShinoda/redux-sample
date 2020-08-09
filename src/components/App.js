@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Button } from './Button'
+import { Message } from './Message'
 import '../App.css'
 
-function mappingState(state) {
-  return state
-}
-
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div>
@@ -22,42 +16,8 @@ class App extends Component {
   }
 }
 
-App = connect()(App)
-
-class Message extends Component {
-
-  render() {
-    return (
-    <p>{this.props.message}: {this.props.counter}</p>
-    )
-  }
-}
-
-Message = connect(mappingState)(Message)
-
-class Button extends Component {
-  constructor(props) {
-    super(props)
-    this.doAction = this.doAction.bind(this)
-  }
-
-  doAction(e) {
-    if(e.shiftKey){
-      this.props.dispatch({type: 'DECREMENT'})
-    } else {
-      this.props.dispatch({type: 'INCREMENT'})
-    }
-  }
-
-  render() {
-    return (
-      <button onClick={this.doAction}>
-        click
-      </button>
-    )
-  }
-}
-
-Button = connect()(Button)
+// コンポーネントにストアを接続するための関数
+// 変数 = connect(設定する内容)(コンポーネント)
+//App = connect()(App)
 
 export default App

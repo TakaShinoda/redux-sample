@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-function mappingState(state) {
+const mappingState = (state) => {
   return state
 }
 
-class Message extends React.Component {
+export class Message extends React.Component {
   render() {
     return (
       <p>
@@ -15,6 +15,5 @@ class Message extends React.Component {
   }
 }
 
+// connectで渡されるステートはthis.propsに組み込まれる
 Message = connect(mappingState)(Message)
-
-export default Message
